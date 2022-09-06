@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-
+#include "Board.h"
 
 
 class LifeGame
@@ -11,7 +11,7 @@ public:
     void display();
 
 private:
-    bool* Handle_;
+    std::shared_ptr<Board> Board_;
     int H_;
     int W_;
 };

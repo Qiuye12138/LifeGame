@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 #include <iostream>
 
 
@@ -6,15 +7,10 @@ class Board
 {
 public:
     Board(int w, int h);
+    Board(int w, int h, std::vector<bool> board);
     ~Board();
-    void set(bool* board);
-    void fresh();
-    void display();
-    int safeCount(int i, int j);
-    int CountNeighbor(int i, int j);
-    bool LiveorDie(int i, int j);
+    void set(std::vector<bool> board);
 
-private:
     bool* currentState;
     bool* nextState;
     int H_;

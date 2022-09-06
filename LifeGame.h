@@ -8,8 +8,13 @@ class LifeGame
 public:
     LifeGame(int w, int h);
     ~LifeGame();
-    void set(bool* board);
-    void display();
+
+    void set(Board board);
+    int safeCount(int i, int j);
+    int CountNeighbor(int i, int j);
+    bool LiveorDie(int i, int j);
+    void fresh();
+    void display(int cycle = 300);
 
 private:
     std::shared_ptr<Board> Board_;

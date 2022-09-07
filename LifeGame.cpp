@@ -17,9 +17,9 @@ LifeGame::~LifeGame() {
 
 void LifeGame::set(Board board) {
 
-	for (int i = 0; i < H_; i++) {
-		for (int j = 0; j < W_; j++) {
-			Board_->currentState[i * W_ + j] = board.currentState[i * board.W_ + j];
+	for (int i = 0; i < board.H_; i++) {
+		for (int j = 0; j < board.W_; j++) {
+			Board_->currentState[i * W_ + j + W_ * H_ / 3] = board.currentState[i * board.W_ + j];
 		}
 	}
 }
@@ -89,17 +89,7 @@ void LifeGame::display(int cycle) {
 
 	while (true) {
 		system("cls");
-		for (int i = 0; i < H_; i++) {
-			for (int j = 0; j < W_; j++) {
-				if (Board_->currentState[i * W_ + j]) {
-					std::cout << "¡ö";
-				}
-				else {
-					std::cout << "¡õ";
-				}
-			}
-			std::cout << std::endl;
-		}
+		Board_->display();
 		fresh();
 		Sleep(cycle);
 	}

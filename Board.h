@@ -10,6 +10,7 @@ public:
     Board(int w, int h, std::vector<bool> board);
     ~Board();
     void set(std::vector<bool> board);
+    void display();
 
     bool* currentState;
     bool* nextState;

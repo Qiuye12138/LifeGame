@@ -35,3 +35,19 @@ void Board::set(std::vector<bool> board) {
 		}
 	}
 }
+
+
+void Board::display() {
+
+	for (int i = 0; i < H_; i++) {
+		for (int j = 0; j < W_; j++) {
+			if (currentState[i * W_ + j]) {
+				std::cout << "¡ö";
+			}
+			else {
+				std::cout << "¡õ";
+			}
+		}
+		std::cout << std::endl;
+	}
+}
